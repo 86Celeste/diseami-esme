@@ -12,9 +12,8 @@
   <meta name="apple-mobile-web-app-title" content="Diseños Esme">
 
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 
-  <!-- Tailwind for quick styling -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-[#FCF9F5] font-sans">
@@ -31,7 +30,6 @@
   </main>
 
   <script>
-    // Service Worker registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
@@ -40,7 +38,6 @@
       });
     }
 
-    // beforeinstallprompt handling
     let deferredPwaPrompt = null;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
@@ -50,9 +47,10 @@
 
     function triggerPwaInstall() {
       if (!deferredPwaPrompt) {
-        alert('La app no está lista para instalar desde el banner. Prueba el menú del navegador.');
+        alert('La app no está lista para instalar. Prueba el menú del navegador.');
         return;
       }
+
       deferredPwaPrompt.prompt();
       deferredPwaPrompt.userChoice.then((choice) => {
         console.log('choice', choice);
