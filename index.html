@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Diseños Esme — PWA</title>
+
+  <meta name="theme-color" content="#D28B9D">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Diseños Esme">
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.svg">
+
+  <!-- Tailwind for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-[#FCF9F5] font-sans">
+  <main class="max-w-xl mx-auto text-center p-6">
+    <h1 class="text-3xl font-bold text-[#A85E71] mb-3">Diseños Esme</h1>
+    <p class="text-gray-700 mb-6">App PWA demo — crea y guarda patrones de amigurumis.</p>
+
+    <div class="space-y-3">
+      <button id="installBtn" onclick="triggerPwaInstall()" class="px-4 py-2 rounded-full bg-[#8EA993] text-white">Instalar App</button>
+      <a class="inline-block text-sm text-[#D28B9D] underline" href="/">Abrir sitio</a>
+    </div>
+
+    <div class="mt-8 text-xs text-gray-500">Al desplegar en Vercel asegúrate de generar PNGs 192/512 para el manifest.</div>
+  </main>
+
+  <script>
+    // Service Worker registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((reg) => console.log('SW registrado:', reg.scope))
+          .catch((err) => console.warn('SW fallo:', err));
+      });
+    }
+
+    // beforeinstallprompt handling
+    let deferredPwaPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPwaPrompt = e;
+      document.getElementById('installBtn').style.display = 'inline-block';
+    });
+
+    function triggerPwaInstall() {
+      if (!deferredPwaPrompt) {
+        alert('La app no está lista para instalar desde el banner. Prueba el menú del navegador.');
+        return;
+      }
+      deferredPwaPrompt.prompt();
+      deferredPwaPrompt.userChoice.then((choice) => {
+        console.log('choice', choice);
+        deferredPwaPrompt = null;
+      });
+    }
+  </script>
+</body>
+</html>

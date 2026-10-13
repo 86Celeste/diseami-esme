@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Diseños Esme</title>
+  <desc id="desc">Icono de app de amigurumis con cara de oso</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6EFE9"/>
+      <stop offset="100%" stop-color="#F3D7DC"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="180" fill="#FCF9F5" stroke="#D28B9D" stroke-width="12"/>
+  <circle cx="178" cy="182" r="36" fill="#C9A389" stroke="#755446" stroke-width="6"/>
+  <circle cx="334" cy="182" r="36" fill="#C9A389" stroke="#755446" stroke-width="6"/>
+  <circle cx="178" cy="182" r="18" fill="#F3D7DC"/>
+  <circle cx="334" cy="182" r="18" fill="#F3D7DC"/>
+  <ellipse cx="256" cy="226" rx="78" ry="62" fill="#D4B097" stroke="#755446" stroke-width="7"/>
+  <ellipse cx="202" cy="236" rx="14" ry="10" fill="#F3A4B5" opacity="0.7"/>
+  <ellipse cx="310" cy="236" rx="14" ry="10" fill="#F3A4B5" opacity="0.7"/>
+  <ellipse cx="256" cy="245" rx="34" ry="24" fill="#FFF5EA" stroke="#755446" stroke-width="5"/>
+  <ellipse cx="256" cy="236" rx="10" ry="8" fill="#4A3B36"/>
+  <path d="M256 246 L256 264 M240 255 Q256 276 272 255" stroke="#4A3B36" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="215" cy="208" r="7" fill="#382C27"/>
+  <circle cx="297" cy="208" r="7" fill="#382C27"/>
+  <ellipse cx="256" cy="316" rx="58" ry="44" fill="#C9A389" stroke="#755446" stroke-width="7"/>
+  <circle cx="162" cy="330" r="30" fill="#A9C7C7" stroke="#755446" stroke-width="6"/>
+  <circle cx="350" cy="320" r="35" fill="#D28B9D" stroke="#755446" stroke-width="6"/>
+  <path d="M160 395 L222 325" stroke="#755446" stroke-width="8" stroke-linecap="round"/>
+  <path d="M352 395 L290 325" stroke="#755446" stroke-width="8" stroke-linecap="round"/>
+</svg>
